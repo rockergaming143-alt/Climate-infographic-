@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Climate Change & Global Warming — Infographic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f5f3ee;
+    --card: #ffffff;
+    --card-border: rgba(0,0,0,.08);
+    --text-primary: #1a1a18;
+    --text-secondary: #5a5a54;
+    --text-tertiary: #8a8a82;
+    --blue-dark: #042C53;
+    --blue-mid: #185FA5;
+    --blue-light: #85B7EB;
+    --amber: #BA7517;
+    --amber-light: #FAEEDA;
+    --green: #3B6D11;
+    --green-light: #EAF3DE;
+    --red-dark: #A32D2D;
+    --red-light: #FCEBEB;
+    --pink-dark: #993556;
+    --pink-light: #FBEAF0;
+    --purple-dark: #534AB7;
+    --purple-light: #EEEDFE;
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    background: var(--blue-dark);
+    border-radius: var(--radius);
+    padding: 2.5rem 2rem 2rem;
+    margin-bottom: 1.25rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(135deg, rgba(255,255,255,.04) 0 1px, transparent 0 28px);
+  }
+  .hero-tag {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--blue-light);
+    margin-bottom: .6rem;
+    position: relative;
+  }
+  .hero-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    line-height: 1.15;
+    color: #fff;
+    margin-bottom: .75rem;
+    position: relative;
+  }
+  .hero-subtitle {
+    font-size: 14px;
+    color: #B5D4F4;
+    line-height: 1.65;
+    max-width: 500px;
+    position: relative;
+  }
+  .hero-stat {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-top: 1.5rem;
+    background: rgba(255,255,255,.08);
+    border: 0.5px solid rgba(255,255,255,.15);
+    border-radius: var(--radius-sm);
+    padding: .6rem 1.1rem;
+    position: relative;
+  }
+  .hero-stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 34px;
+    color: #FAC775;
+  }
+  .hero-stat-label {
+    font-size: 13px;
+    color: #85B7EB;
+  }
+
+  /* ── Shared ── */
+  .section-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin-bottom: .7rem;
+  }
+  .card {
+    background: var(--card);
+    border: 0.5px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.4rem;
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-bottom: 1.25rem; }
+
+  /* ── Temperature bars ── */
+  .temp-card { margin-bottom: 1.25rem; }
+  .bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .bar-year { font-size: 12px; color: var(--text-secondary); min-width: 36px; }
+  .bar-track { flex: 1; height: 20px; background: #f0ede6; border-radius: 5px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 5px; display: flex; align-items: center; padding-left: 8px; }
+  .bar-val { font-size: 11px; font-weight: 500; }
+  .bar-val.dark { color: #042C53; }
+  .bar-val.light { color: #fff; }
+
+  /* ── Causes ── */
+  .cause-item { display: flex; align-items: flex-start; gap: 12px; padding: .8rem 0; border-bottom: 0.5px solid #f0ede6; }
+  .cause-item:last-child { border-bottom: none; }
+  .cause-icon { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 20px; }
+  .cause-title { font-size: 14px; font-weight: 500; color: var(--text-primary); margin-bottom: 2px; }
+  .cause-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.55; }
+
+  /* ── Donut ── */
+  .donut-wrap { display: flex; align-items: center; gap: 1.5rem; margin-top: .75rem; }
+  .donut-legend { display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .legend-row { display: flex; align-items: center; gap: 8px; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+  .legend-label { font-size: 12px; color: var(--text-secondary); }
+  .legend-pct { font-size: 12px; font-weight: 500; margin-left: auto; }
+
+  /* ── Effect cards ── */
+  .effect-card { border-radius: var(--radius); padding: 1rem 1rem .9rem; }
+  .effect-icon { font-size: 22px; margin-bottom: .5rem; }
+  .effect-title { font-size: 13px; font-weight: 500; margin-bottom: 4px; }
+  .effect-desc { font-size: 12px; line-height: 1.55; }
+
+  /* ── Solutions ── */
+  .solution-row { display: flex; align-items: center; gap: 14px; padding: .8rem 0; border-bottom: 0.5px solid #f0ede6; }
+  .solution-row:last-child { border-bottom: none; }
+  .sol-pct-wrap { width: 110px; flex-shrink: 0; }
+  .sol-pct-num { font-size: 11px; color: var(--text-tertiary); }
+  .sol-pct-track { height: 7px; background: #EAF3DE; border-radius: 4px; margin-top: 5px; overflow: hidden; }
+  .sol-pct-fill { height: 100%; background: #639922; border-radius: 4px; }
+  .sol-label { font-size: 13px; font-weight: 500; color: var(--text-primary); }
+  .sol-desc { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
+
+  /* ── CTA footer ── */
+  .cta {
+    background: var(--blue-dark);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.6rem;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .cta-title { font-size: 15px; font-weight: 500; color: #fff; margin-bottom: 4px; }
+  .cta-sub { font-size: 13px; color: #85B7EB; line-height: 1.55; }
+  .cta-badge {
+    background: rgba(255,255,255,.08);
+    border: 0.5px solid rgba(255,255,255,.18);
+    border-radius: var(--radius-sm);
+    padding: .5rem 1rem;
+    font-size: 12px;
+    color: #FAC775;
+    font-weight: 500;
+    white-space: nowrap;
+    flex-shrink: 0;
+    text-align: center;
+  }
+  .cta-badge span { display: block; font-size: 20px; font-family: 'DM Serif Display', serif; color: #fff; }
+
+  /* ── Source footer ── */
+  .source-line { text-align: center; font-size: 11px; color: var(--text-tertiary); margin-top: 1.75rem; }
+
+  @media (max-width: 520px) {
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    .donut-wrap { flex-direction: column; }
+    .hero-title { font-size: 28px; }
+    .cta { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-tag">Global challenge · 2024 edition</div>
+    <div class="hero-title">Climate Change<br>&amp; Global Warming</div>
+    <div class="hero-subtitle">Earth's average temperature is rising faster than at any point in recorded history — driven by human activity and reshaping life on every continent.</div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">+1.2°C</span>
+      <span class="hero-stat-label">above pre-industrial average (as of 2023)</span>
+    </div>
+  </div>
+
+  <!-- Temperature anomaly bars -->
+  <div class="card temp-card">
+    <div class="section-label">Global temperature anomaly (°C above 1850–1900 baseline)</div>
+    <div style="margin-top:.9rem">
+      <div class="bar-row"><span class="bar-year">1900</span><div class="bar-track"><div class="bar-fill" style="width:8%;background:#B5D4F4"><span class="bar-val dark">+0.1</span></div></div></div>
+      <div class="bar-row"><span class="bar-year">1940</span><div class="bar-track"><div class="bar-fill" style="width:14%;background:#85B7EB"><span class="bar-val dark">+0.2</span></div></div></div>
+      <div class="bar-row"><span class="bar-year">1970</span><div class="bar-track"><div class="bar-fill" style="width:22%;background:#FAC775"><span class="bar-val dark">+0.3</span></div></div></div>
+      <div class="bar-row"><span class="bar-year">1990</span><div class="bar-track"><div class="bar-fill" style="width:42%;background:#EF9F27"><span class="bar-val dark">+0.6</span></div></div></div>
+      <div class="bar-row"><span class="bar-year">2010</span><div class="bar-track"><div class="bar-fill" style="width:62%;background:#D85A30"><span class="bar-val light">+0.9</span></div></div></div>
+      <div class="bar-row"><span class="bar-year">2023</span><div class="bar-track"><div class="bar-fill" style="width:90%;background:#A32D2D"><span class="bar-val light">+1.45</span></div></div></div>
+    </div>
+  </div>
+
+  <!-- Causes + Donut -->
+  <div class="grid-2">
+    <div class="card">
+      <div class="section-label">Main causes</div>
+      <div class="cause-item">
+        <div class="cause-icon" style="background:#FAEEDA">🔥</div>
+        <div><div class="cause-title">Fossil fuels</div><div class="cause-desc">Burning coal, oil &amp; gas releases CO₂ — the largest single driver.</div></div>
+      </div>
+      <div class="cause-item">
+        <div class="cause-icon" style="background:#EAF3DE">🌳</div>
+        <div><div class="cause-title">Deforestation</div><div class="cause-desc">Forests absorb CO₂; clearing them releases stored carbon.</div></div>
+      </div>
+      <div class="cause-item">
+        <div class="cause-icon" style="background:#E6F1FB">🚜</div>
+        <div><div class="cause-title">Agriculture</div><div class="cause-desc">Livestock &amp; rice paddies emit methane; fertilisers release N₂O.</div></div>
+      </div>
+      <div class="cause-item">
+        <div class="cause-icon" style="background:#FCEBEB">🏭</div>
+        <div><div class="cause-title">Industry</div><div class="cause-desc">Cement, steel &amp; chemical production add significant emissions.</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="section-label">Greenhouse gas share</div>
+      <div class="donut-wrap">
+        <svg width="120" height="120" viewBox="0 0 120 120" role="img" aria-label="Donut chart: CO2 76%, Methane 16%, Nitrous oxide 6%, F-gases 2%">
+          <title>Greenhouse gas composition</title>
+          <circle cx="60" cy="60" r="44" fill="none" stroke="#042C53" stroke-width="24" stroke-dasharray="276.5 276.5" stroke-dashoffset="0" transform="rotate(-90 60 60)"/>
+          <circle cx="60" cy="60" r="44" fill="none" stroke="#185FA5" stroke-width="24" stroke-dasharray="44.2 276.5" stroke-dashoffset="-210" transform="rotate(-90 60 60)"/>
+          <circle cx="60" cy="60" r="44" fill="none" stroke="#378ADD" stroke-width="24" stroke-dasharray="16.6 276.5" stroke-dashoffset="-254.2" transform="rotate(-90 60 60)"/>
+          <circle cx="60" cy="60" r="44" fill="none" stroke="#85B7EB" stroke-width="24" stroke-dasharray="5.5 276.5" stroke-dashoffset="-270.8" transform="rotate(-90 60 60)"/>
+          <text x="60" y="55" text-anchor="middle" font-size="18" font-weight="500" fill="#1a1a18" font-family="'DM Serif Display',serif">76%</text>
+          <text x="60" y="70" text-anchor="middle" font-size="11" fill="#5a5a54" font-family="'DM Sans',sans-serif">CO₂</text>
+        </svg>
+        <div class="donut-legend">
+          <div class="legend-row"><div class="legend-dot" style="background:#042C53"></div><span class="legend-label">Carbon dioxide</span><span class="legend-pct">76%</span></div>
+          <div class="legend-row"><div class="legend-dot" style="background:#185FA5"></div><span class="legend-label">Methane</span><span class="legend-pct">16%</span></div>
+          <div class="legend-row"><div class="legend-dot" style="background:#378ADD"></div><span class="legend-label">Nitrous oxide</span><span class="legend-pct">6%</span></div>
+          <div class="legend-row"><div class="legend-dot" style="background:#85B7EB"></div><span class="legend-label">F-gases</span><span class="legend-pct">2%</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Effects -->
+  <div class="section-label">Key effects of climate change</div>
+  <div class="grid-3">
+    <div class="effect-card" style="background:#FAEEDA;border:0.5px solid #FAC775">
+      <div class="effect-icon">🌡️</div>
+      <div class="effect-title" style="color:#633806">Extreme heat</div>
+      <div class="effect-desc" style="color:#854F0B">Heatwaves are more frequent, intense &amp; longer-lasting worldwide.</div>
+    </div>
+    <div class="effect-card" style="background:#E6F1FB;border:0.5px solid #85B7EB">
+      <div class="effect-icon">🌊</div>
+      <div class="effect-title" style="color:#042C53">Sea level rise</div>
+      <div class="effect-desc" style="color:#185FA5">Ice sheets melt; oceans expand — threatening 1 billion coastal residents.</div>
+    </div>
+    <div class="effect-card" style="background:#EAF3DE;border:0.5px solid #97C459">
+      <div class="effect-icon">🌿</div>
+      <div class="effect-title" style="color:#173404">Ecosystem loss</div>
+      <div class="effect-desc" style="color:#27500A">Coral bleaching, species extinction &amp; habitat collapse accelerating.</div>
+    </div>
+    <div class="effect-card" style="background:#FCEBEB;border:0.5px solid #F09595">
+      <div class="effect-icon">⛈️</div>
+      <div class="effect-title" style="color:#501313">Severe storms</div>
+      <div class="effect-desc" style="color:#791F1F">Hurricanes &amp; cyclones gaining intensity; rainfall more unpredictable.</div>
+    </div>
+    <div class="effect-card" style="background:#FBEAF0;border:0.5px solid #ED93B1">
+      <div class="effect-icon">🌾</div>
+      <div class="effect-title" style="color:#4B1528">Food security</div>
+      <div class="effect-desc" style="color:#72243E">Crop yields at risk as droughts and floods disrupt agriculture.</div>
+    </div>
+    <div class="effect-card" style="background:#EEEDFE;border:0.5px solid #AFA9EC">
+      <div class="effect-icon">🫁</div>
+      <div class="effect-title" style="color:#26215C">Human health</div>
+      <div class="effect-desc" style="color:#3C3489">Disease vectors spreading; heat illness &amp; air quality worsening.</div>
+    </div>
+  </div>
+
+  <!-- Solutions -->
+  <div class="card" style="margin-bottom:1.25rem">
+    <div class="section-label">Solutions &amp; their potential impact</div>
+    <div style="margin-top:.75rem">
+      <div class="solution-row">
+        <div class="sol-pct-wrap"><div class="sol-pct-num">~34% of target</div><div class="sol-pct-track"><div class="sol-pct-fill" style="width:34%"></div></div></div>
+        <div><div class="sol-label">☀️ Renewable energy</div><div class="sol-desc">Solar &amp; wind replacing fossil fuels in power generation</div></div>
+      </div>
+      <div class="solution-row">
+        <div class="sol-pct-wrap"><div class="sol-pct-num">~20% of target</div><div class="sol-pct-track"><div class="sol-pct-fill" style="width:20%"></div></div></div>
+        <div><div class="sol-label">🌲 Reforestation</div><div class="sol-desc">Restoring forests to absorb billions of tonnes of CO₂</div></div>
+      </div>
+      <div class="solution-row">
+        <div class="sol-pct-wrap"><div class="sol-pct-num">~18% of target</div><div class="sol-pct-track"><div class="sol-pct-fill" style="width:18%"></div></div></div>
+        <div><div class="sol-label">🏠 Efficiency &amp; buildings</div><div class="sol-desc">Better insulation, LED lighting &amp; smart energy use</div></div>
+      </div>
+      <div class="solution-row">
+        <div class="sol-pct-wrap"><div class="sol-pct-num">~15% of target</div><div class="sol-pct-track"><div class="sol-pct-fill" style="width:15%"></div></div></div>
+        <div><div class="sol-label">⚡ Clean transport</div><div class="sol-desc">Electric vehicles &amp; public transit reducing road emissions</div></div>
+      </div>
+      <div class="solution-row">
+        <div class="sol-pct-wrap"><div class="sol-pct-num">~13% of target</div><div class="sol-pct-track"><div class="sol-pct-fill" style="width:13%"></div></div></div>
+        <div><div class="sol-label">🥗 Sustainable food</div><div class="sol-desc">Reducing meat consumption &amp; food waste emissions</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <div style="flex:1">
+      <div class="cta-title">The window to act is narrow</div>
+      <div class="cta-sub">Limiting warming to 1.5°C requires halving global emissions by 2030 and reaching net-zero by 2050.</div>
+    </div>
+    <div class="cta-badge"><span>2030</span>halving target</div>
+    <div class="cta-badge"><span>2050</span>net-zero goal</div>
+  </div>
+
+  <div class="source-line">Sources: IPCC AR6 · NASA GISS · Our World in Data · IEA · WMO</div>
+</div>
+</body>
+</html>
